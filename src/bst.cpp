@@ -34,7 +34,7 @@ BST::BST() {
 // YOUR CODE HERE
 
 BST::~BST() {
-    // YOUR CODE HERE
+    deconstruct_helper(this->root);
 }
 
 
@@ -85,4 +85,16 @@ BSTNode* BST::remove(int key, int value) {
 */
 int BST::sumValue() {
     // YOUR CODE HERE
+}
+
+void BST::deconstruct_helper(BSTNode node) {
+
+	if (node) {
+	
+		deconstruct_helper(node -> left);
+		deconstruct_helper(node -> right);
+		delete node;
+	
+	}
+
 }
