@@ -45,7 +45,7 @@ BST::~BST() {
 
 
 BSTNode* BST::find(int key, int value) {
-    // YOUR CODE HERE
+    find_help(key, value, this->root);
 }
 
 
@@ -87,7 +87,7 @@ int BST::sumValue() {
     sum_helper(this->root);
 }
 
-void BST::sum_helper(BSTNode *node){
+int BST::sum_helper(BSTNode *node){
 
 	if (node){
 	
@@ -111,3 +111,29 @@ void BST::deconstruct_helper(BSTNode *node) {
 	}
 
 }
+
+BSTNode* BST::find_help(int key, int value, BSTNode *node){
+
+	if (node == NULL){
+		return (NULL);
+	}
+	if ((node -> key == key) && (node -> value == value)){
+	
+		return node;
+	
+	}
+	if ((key < node -> key) || ((key == node -> key) && (value < node -> value))){
+	
+		return find_help(key, value, this->left);
+	
+	}
+	else{
+	
+		return find_help(key,value,this->right);
+	
+	}
+
+}
+
+
+
