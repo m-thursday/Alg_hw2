@@ -84,10 +84,23 @@ BSTNode* BST::remove(int key, int value) {
  * Binary Search Tree sum of all values
 */
 int BST::sumValue() {
-    // YOUR CODE HERE
+    sum_helper(this->root);
 }
 
-void BST::deconstruct_helper(BSTNode node) {
+void BST::sum_helper(BSTNode *node){
+
+	if (node){
+	
+		return this->value + sum_helper(this->left) + sum_helper(this->right);
+	
+	}
+	else{
+		return 0;
+	}
+
+}
+
+void BST::deconstruct_helper(BSTNode *node) {
 
 	if (node) {
 	

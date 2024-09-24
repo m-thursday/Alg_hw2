@@ -26,6 +26,7 @@ class BST {
         BSTNode* insert(int key, int value = 0);
         BSTNode* remove(int key, int value = 0);
         int sumValue();
-        void deconstruct_helper(BSTNode node);
+        void sum_helper(BSTNode *node);
+        void deconstruct_helper(BSTNode *node);
 };
 
