@@ -189,5 +189,16 @@ BSTNode* BST::find_help(int key, int value, BSTNode *node){
 
 }
 
+BSTNode* BST::insert_help(int key, int value, BSTNode *node){
+
+	
+
+}
+BSTNode* BST::remove_help(int key, int value, BSTNode *node){
+
+	
+
+}
+
 
 
