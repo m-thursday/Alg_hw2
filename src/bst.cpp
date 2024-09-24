@@ -54,11 +54,65 @@ BSTNode* BST::find(int key, int value) {
 */
 
 BSTNode* BST::popMaximum() {
-    // YOUR CODE HERE
+    if (this -> root == NULL){
+    	return NULL;
+    }
+    BSTNode *p = this -> root;
+    BSTNode *q = NULL;
+    
+    bool done = false;
+    
+    while (!done){ 
+    	if (p -> right != NULL){
+    		q = p;
+    		p = p -> right;
+    	}
+    	else{
+    		done = true;
+    	}
+    }
+   
+    if (p == this -> root){
+	   	this -> root = p -> left; 
+    }
+    else{
+    	q -> right  = p -> left;
+    }
+    
+    p -> left = p -> right = NULL;
+    
+    return p;
 }
 
 BSTNode* BST::popMinimum() {
-    // YOUR CODE HERE
+	if (this -> root == NULL){
+    	return NULL;
+    }
+    BSTNode *p = this -> root;
+    BSTNode *q = NULL;
+    
+    bool done = false;
+    
+    while (!done){ 
+    	if (p -> left != NULL){
+    		q = p;
+    		p = p -> left;
+    	}
+    	else{
+    		done = true;
+    	}
+    }
+   
+    if (p == this -> root){
+	   	this -> root = p -> right; 
+    }
+    else{
+    	q -> left  = p -> right;
+    }
+    
+    p -> left = p -> right = NULL;
+    
+    return p;
 }
 
 /*
