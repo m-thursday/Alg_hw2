@@ -30,7 +30,7 @@ class BST {
         void deconstruct_helper(BSTNode *node);
         BSTNode* find_help(int key, int value, BSTNode *node);
         BSTNode* insert_help(int key, int value, BSTNode *node);
-        BSTNode* remove_help(int key, int value, BSTNode *node):
+        BSTNode* remove_help(int key, int value, BSTNode *node);
         
 };
 
